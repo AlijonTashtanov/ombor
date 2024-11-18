@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Munis_savdo | Log in</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="../../plugins/fontawesome-free/css/all.min.css"
+    />
+    <!-- icheck bootstrap -->
+    <link
+      rel="stylesheet"
+      href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css"
+    />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css?v=3.2.0" />
+    <style>
+      body {
+        background-color: #f4f6f9;
+      }
+      .login-box {
+        max-width: 400px;
+        margin: auto;
+        padding-top: 50px;
+      }
+      .card {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .card-header img {
+        width: 300px;
+        margin: 20px auto;
+        display: block;
+      }
+      .btn-primary,
+      .btn-danger {
+        border-radius: 5px;
+      }
+      .social-auth-links .btn {
+        margin-bottom: 10px;
+      }
+      .card-body .input-group .form-control {
+        border-radius: 0;
+      }
+      .input-group .input-group-text {
+        border-radius: 0;
+      }
+    </style>
+  </head>
+  <body class="hold-transition login-page">
+    <div class="login-box">
+      <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+          <a href="/" class="h1">
+            <img src="/docs/qizil.png" alt="Munis Logo" />
+          </a>
+        </div>
+        <div class="card-body login-card-body">
+          <form action="/send-login" method="post">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Login"
+                name="login"
+                required
+              />
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Parol"
+                name="password"
+                required
+              />
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+            <div class="social-auth-links text-center mb-3">
+              <button class="btn btn-block btn-primary">Yuborish</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js?v=3.2.0"></script>
+  </body>
+</html>

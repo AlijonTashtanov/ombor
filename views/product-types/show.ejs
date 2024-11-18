@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AdminLTE 3 | Dashboard</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
+    <!-- Ionicons -->
+    <link
+      rel="stylesheet"
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link
+      rel="stylesheet"
+      href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"
+    />
+    <!-- iCheck -->
+    <link
+      rel="stylesheet"
+      href="plugins/icheck-bootstrap/icheck-bootstrap.min.css"
+    />
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css?v=3.2.0" />
+    <!-- overlayScrollbars -->
+    <link
+      rel="stylesheet"
+      href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"
+    />
+
+    //CDN
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Theme style -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css"
+    />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+
+    //CDN
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css" />
+    <!-- summernote -->
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css" />
+    <script data-cfasync="false" nonce="c768c475-1d6e-4ab7-9230-7ff56c84a290">
+      try {
+        (function (w, d) {
+          !(function (cJ, cK, cL, cM) {
+            if (cJ.zaraz) console.error("zaraz is loaded twice");
+            else {
+              cJ[cL] = cJ[cL] || {};
+              cJ[cL].executed = [];
+              cJ.zaraz = { deferred: [], listeners: [] };
+              cJ.zaraz._v = "5815";
+              cJ.zaraz._n = "c768c475-1d6e-4ab7-9230-7ff56c84a290";
+              cJ.zaraz.q = [];
+              cJ.zaraz._f = function (cN) {
+                return async function () {
+                  var cO = Array.prototype.slice.call(arguments);
+                  cJ.zaraz.q.push({ m: cN, a: cO });
+                };
+              };
+              for (const cP of ["track", "set", "debug"])
+                cJ.zaraz[cP] = cJ.zaraz._f(cP);
+              cJ.zaraz.init = () => {
+                var cQ = cK.getElementsByTagName(cM)[0],
+                  cR = cK.createElement(cM),
+                  cS = cK.getElementsByTagName("title")[0];
+                cS && (cJ[cL].t = cK.getElementsByTagName("title")[0].text);
+                cJ[cL].x = Math.random();
+                cJ[cL].w = cJ.screen.width;
+                cJ[cL].h = cJ.screen.height;
+                cJ[cL].j = cJ.innerHeight;
+                cJ[cL].e = cJ.innerWidth;
+                cJ[cL].l = cJ.location.href;
+                cJ[cL].r = cK.referrer;
+                cJ[cL].k = cJ.screen.colorDepth;
+                cJ[cL].n = cK.characterSet;
+                cJ[cL].o = new Date().getTimezoneOffset();
+                if (cJ.dataLayer)
+                  for (const cT of Object.entries(
+                    Object.entries(dataLayer).reduce(
+                      (cU, cV) => ({ ...cU[1], ...cV[1] }),
+                      {}
+                    )
+                  ))
+                    zaraz.set(cT[0], cT[1], { scope: "page" });
+                cJ[cL].q = [];
+                for (; cJ.zaraz.q.length; ) {
+                  const cW = cJ.zaraz.q.shift();
+                  cJ[cL].q.push(cW);
+                }
+                cR.defer = !0;
+                for (const cX of [localStorage, sessionStorage])
+                  Object.keys(cX || {})
+                    .filter((cZ) => cZ.startsWith("_zaraz_"))
+                    .forEach((cY) => {
+                      try {
+                        cJ[cL]["z_" + cY.slice(7)] = JSON.parse(cX.getItem(cY));
+                      } catch {
+                        cJ[cL]["z_" + cY.slice(7)] = cX.getItem(cY);
+                      }
+                    });
+                cR.referrerPolicy = "origin";
+                cR.src =
+                  "/cdn-cgi/zaraz/s.js?z=" +
+                  btoa(encodeURIComponent(JSON.stringify(cJ[cL])));
+                cQ.parentNode.insertBefore(cR, cQ);
+              };
+              ["complete", "interactive"].includes(cK.readyState)
+                ? zaraz.init()
+                : cJ.addEventListener("DOMContentLoaded", zaraz.init);
+            }
+          })(w, d, "zarazData", "script");
+          window.zaraz._p = async (bb) =>
+            new Promise((bc) => {
+              if (bb) {
+                bb.e &&
+                  bb.e.forEach((bd) => {
+                    try {
+                      const be = d.querySelector("script[nonce]"),
+                        bf = be?.nonce || be?.getAttribute("nonce"),
+                        bg = d.createElement("script");
+                      bf && (bg.nonce = bf);
+                      bg.innerHTML = bd;
+                      bg.onload = () => {
+                        d.head.removeChild(bg);
+                      };
+                      d.head.appendChild(bg);
+                    } catch (bh) {
+                      console.error(`Error executing script: ${bd}\n`, bh);
+                    }
+                  });
+                Promise.allSettled(
+                  (bb.f || []).map((bi) => fetch(bi[0], bi[1]))
+                );
+              }
+              bc();
+            });
+          zaraz._p({ e: ["(function(w,d){})(window,document)"] });
+        })(window, document);
+      } catch (e) {
+        throw (fetch("/cdn-cgi/zaraz/t"), e);
+      }
+    </script>
+    <style>
+      .select-box {
+        width: 200px;
+        display: inline-block;
+        margin-right: 10px; /* Optional: Adds spacing between selects */
+        height: 25px;
+      }
+    </style>
+  </head>
+  <body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+      <!-- Preloader -->
+      <div
+        class="preloader flex-column justify-content-center align-items-center"
+      >
+        <img
+          class="animation__shake"
+          src="dist/img/AdminLTELogo.png"
+          alt="AdminLTELogo"
+          height="60"
+          width="60"
+        />
+      </div>
+
+      <!-- Navbar -->
+      <%- include('../partials/header.ejs') %>
+      <!-- /.navbar -->
+
+      <!-- Main Sidebar Container -->
+      <%- include('../partials/sidebar') %>
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <!-- /.col -->
+              <div class="col-sm-6"></div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+          <div class="container-fluid">
+            <div class="card card-outline card-primary">
+              <div class="card-header">
+                <div class="card-tools">
+                  <button
+                    type="button"
+                    class="btn btn-tool"
+                    data-card-widget="maximize"
+                  >
+                    <i class="fas fa-expand"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-tool"
+                    data-card-widget="collapse"
+                  >
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <a href="/edit-type/<%= types.ID %>">
+                  <span class="btn btn-outline-warning">
+                    <i class="fas fa-pen"></i>
+                  </span>
+                </a>
+                <a href="/destroy-type/<%= types.ID %>" class="d-inline-block">
+                  <button
+                    class="btn btn-outline-danger"
+                    type="submit"
+                    onclick="return confirm('O`chirilsinmi?')"
+                  >
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </a>
+                <a href="/types" class="btn btn-outline-secondary"
+                  ><i class="fas fa-redo"></i
+                ></a>
+              </div>
+              <div class="card-body table-responsive">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <th>ID</th>
+                      <td><%= types.ID %></td>
+                    </tr>
+
+                    <tr>
+                      <th>NOMI</th>
+                      <td><%= types.NAME %></td>
+                    </tr>
+                    <tr>
+                      <th>IZOHI</th>
+                      <td><%= types.COMMENT %></td>
+                    </tr>
+                    <tr>
+                      <th>YARATDI</th>
+
+                      <td><%= types.CREATED_BY_FIO %></td>
+                    </tr>
+                    <tr>
+                      <th>YARATILGAN VAQT</th>
+                      <td>
+                        <%= new Date(types.CREATED_AT).toLocaleString('uz-UZ', {
+                        year: 'numeric', month: '2-digit', day: '2-digit', hour:
+                        '2-digit', minute: '2-digit', hour12: false
+                        }).replace(',', '') %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>TAHRIRLAGAN</th>
+
+                      <td><%= types.UPDATED_BY_FIO %></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+      <%- include('../partials/footer') %>
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
+    <script>
+      $.widget.bridge("uibutton", $.ui.button);
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js?v=3.2.0"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
+  </body>
+</html>

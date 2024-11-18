@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AdminLTE 3 | Dashboard</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
+    <!-- Ionicons -->
+    <link
+      rel="stylesheet"
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link
+      rel="stylesheet"
+      href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"
+    />
+    <!-- iCheck -->
+    <link
+      rel="stylesheet"
+      href="plugins/icheck-bootstrap/icheck-bootstrap.min.css"
+    />
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css?v=3.2.0" />
+    <!-- overlayScrollbars -->
+    <link
+      rel="stylesheet"
+      href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"
+    />
+    <!-- Daterange picker -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css" />
+    <!-- summernote -->
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css" />
+    <script data-cfasync="false" nonce="c768c475-1d6e-4ab7-9230-7ff56c84a290">
+      try {
+        (function (w, d) {
+          !(function (cJ, cK, cL, cM) {
+            if (cJ.zaraz) console.error("zaraz is loaded twice");
+            else {
+              cJ[cL] = cJ[cL] || {};
+              cJ[cL].executed = [];
+              cJ.zaraz = { deferred: [], listeners: [] };
+              cJ.zaraz._v = "5815";
+              cJ.zaraz._n = "c768c475-1d6e-4ab7-9230-7ff56c84a290";
+              cJ.zaraz.q = [];
+              cJ.zaraz._f = function (cN) {
+                return async function () {
+                  var cO = Array.prototype.slice.call(arguments);
+                  cJ.zaraz.q.push({ m: cN, a: cO });
+                };
+              };
+              for (const cP of ["track", "set", "debug"])
+                cJ.zaraz[cP] = cJ.zaraz._f(cP);
+              cJ.zaraz.init = () => {
+                var cQ = cK.getElementsByTagName(cM)[0],
+                  cR = cK.createElement(cM),
+                  cS = cK.getElementsByTagName("title")[0];
+                cS && (cJ[cL].t = cK.getElementsByTagName("title")[0].text);
+                cJ[cL].x = Math.random();
+                cJ[cL].w = cJ.screen.width;
+                cJ[cL].h = cJ.screen.height;
+                cJ[cL].j = cJ.innerHeight;
+                cJ[cL].e = cJ.innerWidth;
+                cJ[cL].l = cJ.location.href;
+                cJ[cL].r = cK.referrer;
+                cJ[cL].k = cJ.screen.colorDepth;
+                cJ[cL].n = cK.characterSet;
+                cJ[cL].o = new Date().getTimezoneOffset();
+                if (cJ.dataLayer)
+                  for (const cT of Object.entries(
+                    Object.entries(dataLayer).reduce(
+                      (cU, cV) => ({ ...cU[1], ...cV[1] }),
+                      {}
+                    )
+                  ))
+                    zaraz.set(cT[0], cT[1], { scope: "page" });
+                cJ[cL].q = [];
+                for (; cJ.zaraz.q.length; ) {
+                  const cW = cJ.zaraz.q.shift();
+                  cJ[cL].q.push(cW);
+                }
+                cR.defer = !0;
+                for (const cX of [localStorage, sessionStorage])
+                  Object.keys(cX || {})
+                    .filter((cZ) => cZ.startsWith("_zaraz_"))
+                    .forEach((cY) => {
+                      try {
+                        cJ[cL]["z_" + cY.slice(7)] = JSON.parse(cX.getItem(cY));
+                      } catch {
+                        cJ[cL]["z_" + cY.slice(7)] = cX.getItem(cY);
+                      }
+                    });
+                cR.referrerPolicy = "origin";
+                cR.src =
+                  "/cdn-cgi/zaraz/s.js?z=" +
+                  btoa(encodeURIComponent(JSON.stringify(cJ[cL])));
+                cQ.parentNode.insertBefore(cR, cQ);
+              };
+              ["complete", "interactive"].includes(cK.readyState)
+                ? zaraz.init()
+                : cJ.addEventListener("DOMContentLoaded", zaraz.init);
+            }
+          })(w, d, "zarazData", "script");
+          window.zaraz._p = async (bb) =>
+            new Promise((bc) => {
+              if (bb) {
+                bb.e &&
+                  bb.e.forEach((bd) => {
+                    try {
+                      const be = d.querySelector("script[nonce]"),
+                        bf = be?.nonce || be?.getAttribute("nonce"),
+                        bg = d.createElement("script");
+                      bf && (bg.nonce = bf);
+                      bg.innerHTML = bd;
+                      bg.onload = () => {
+                        d.head.removeChild(bg);
+                      };
+                      d.head.appendChild(bg);
+                    } catch (bh) {
+                      console.error(`Error executing script: ${bd}\n`, bh);
+                    }
+                  });
+                Promise.allSettled(
+                  (bb.f || []).map((bi) => fetch(bi[0], bi[1]))
+                );
+              }
+              bc();
+            });
+          zaraz._p({ e: ["(function(w,d){})(window,document)"] });
+        })(window, document);
+      } catch (e) {
+        throw (fetch("/cdn-cgi/zaraz/t"), e);
+      }
+    </script>
+    <style>
+      .select-box {
+        width: 200px;
+        display: inline-block;
+        margin-right: 10px; /* Optional: Adds spacing between selects */
+        height: 25px;
+      }
+    </style>
+  </head>
+  <body class="hold-transition sidebar-mini layout-fixed">
+
+
+      <!-- Navbar -->
+      <%- include('../partials/header.ejs') %>
+      <!-- /.navbar -->
+
+      <!-- Main Sidebar Container -->
+      <%- include('../partials/sidebar') %>
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper" style="min-height: 1604.44px">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>Mahsulot qo'shish</h1>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="/get-products">Home</a></li>
+                  <li class="breadcrumb-item active">Mahsulot qo'shish</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <form action="/save-product" method="post" enctype="multipart/form-data">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Asosiy</h3>
+
+                  <div class="card-tools">
+                    <button
+                      type="button"
+                      class="btn btn-tool"
+                      data-card-widget="collapse"
+                      title="Collapse"
+                    >
+                      <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="inputName">Mahsulot nomi</label>
+                    <input type="text" id="inputName" name="name" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label for="inputClientCompany">Mahsulot modeli</label>
+                    <input
+                      type="text"
+                      name="model"
+                      id="inputClientCompany"
+                      class="form-control"
+                    />
+                  </div>
+                  <!-- <div class="form-group">
+                    <label for="inputDescription">Mahsulot xususiyatlari</label>
+                    <textarea
+                      id="inputDescription"
+                      class="form-control"
+                      rows="4"
+                    ></textarea>
+                  </div> -->
+
+                  <div class="form-group">
+                    <label for="inputProjectLeader">USD</label>
+                    <input
+                      type="number"
+                      name="usd"
+                      id="inputProjectLeader"
+                      class="form-control"
+                    />
+                  </div>
+
+                  <!-- Add the div container to hold the new inputs -->
+                  <div id="additionalImage"></div>
+                  <div id="additionalproperty"></div>
+                  <button
+                    type="button"
+                    id="addButton"
+                    class="btn btn-primary"
+                    style="margin-bottom: 5px"
+                  >
+                    <i class="fa fa-plus"></i>Rasm qo'shish
+                  </button>
+                  <button
+                  type="button"
+                  id="addButton1"
+                  class="btn btn-primary"
+                  style="margin-bottom: 5px"
+                >
+                  <i class="fa fa-plus"></i>Xususiyat qo'shish
+                </button>
+                  <input
+                  type="submit"
+                  value="Yaratish"
+                  class="btn btn-success float-right"
+                />
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <div class="col-md-6">
+                <div class="card card-secondary">
+                  <div class="card-header">
+                    <h3 class="card-title">Categoriya</h3>
+  
+                    <div class="card-tools">
+                      <button
+                        type="button"
+                        class="btn btn-tool"
+                        data-card-widget="collapse"
+                        title="Collapse"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      
+                    </div>
+                  </div>
+                  <div class="card-body" style="display: block">
+                    <form action="" method="post" id="filter">
+                      <div class="form-group">
+                        <label for="name">KATEGORIYA</label>
+                        <select
+                          id="status"
+                          name="category"
+                          class="form-control custom-select"
+                        >
+                          <option value="">Tanlang</option>
+                          <% category.forEach(cat=> { %>
+                          <option value="<%= cat.ID %>"><%= cat.NAME %></option>
+                          <% }) %>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="type">TURI</label>
+                        <select
+                          id="type"
+                          name="type"
+                          class="form-control custom-select"
+                        ></select>
+                      </div>
+  
+                      <div class="form-group">
+                        <label for="name">BRANDI</label>
+                        <select
+                          id="brand"
+                          name="brand"
+                          class="form-control custom-select"
+                        ></select>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+          </div>
+     
+    </form>
+</section>
+        <!-- /.content -->
+      <script src="plugins/jquery/jquery.min.js"></script>
+
+      <script>
+                document
+          .getElementById("addButton1")
+          .addEventListener("click", function () {
+            const newRow = document.createElement("div");
+            newRow.classList.add("row", "mt-2");
+
+                    // Create "Xususiyat" input
+                    const keyCol = document.createElement("div");
+                    keyCol.classList.add("col-md-6");
+                    keyCol.innerHTML = `
+                <div class="form-group">
+                  <label for="key">Xususiyat</label>
+                  <input type="text" class="form-control" name="new_keys" placeholder="">
+                </div>
+              `;
+
+        
+            const valueCol = document.createElement("div");
+            valueCol.classList.add("col-md-6");
+            valueCol.innerHTML = `
+        <div class="form-group">
+          <label for="value">Qiymat</label>
+          <input type="text" class="form-control" name="new_value" placeholder="">
+        </div>
+      `;
+      newRow.appendChild(keyCol);
+            newRow.appendChild(valueCol);
+
+            // Append to the additional inputs container
+            document.getElementById("additionalproperty").appendChild(newRow);
+          });
+        // Add event listener to the Add button
+        document
+          .getElementById("addButton")
+          .addEventListener("click", function () {
+            const newRow = document.createElement("div");
+            newRow.classList.add("row", "mt-2");
+
+            //         // Create "Xususiyat" input
+            //         const keyCol = document.createElement("div");
+            //         keyCol.classList.add("col-md-6");
+            //         keyCol.innerHTML = `
+            //     <div class="form-group">
+            //       <label for="key">Xususiyat</label>
+            //       <input type="text" class="form-control" name="new_keys[]" placeholder="Enter key">
+            //     </div>
+            //   `;
+
+            // Create "Qiymat" input
+            const valueCol = document.createElement("div");
+            valueCol.classList.add("col-md-12");
+            valueCol.innerHTML = `
+        <div class="form-group">
+          <label for="value">Rasm</label>
+          <input type="file" class="form-control" name="images" placeholder="Enter image">
+        </div>
+      `;
+
+            newRow.appendChild(valueCol);
+
+            // Append to the additional inputs container
+            document.getElementById("additionalImage").appendChild(newRow);
+          });
+      </script>
+
+      <script>
+        $(document).ready(function () {
+          // Trigger AJAX request on any change in the selects
+          $('[name="category"]').on(
+            "change",
+            function () {
+              // Collect selected values
+              const productCategoryId = $('[name="category"]').val();
+              const orderTypeId = $('[name="order_type"]').val();
+              console.log("ayt", orderTypeId);
+              const products = $('[name="products"]').val();
+              // const productBrandId = $('[name="brand"]').val();
+
+              // Check if all fields are selected before making the request
+              if (productCategoryId) {
+                $.ajax({
+                  url: "/add", // Replace with your actual route
+                  method: "POST", // or 'GET' based on your endpoint configuration
+                  contentType: "application/json",
+                  data: JSON.stringify({
+                    // category_id: categoryId,
+                    productCategoryId: productCategoryId,
+                    orderTypeId: orderTypeId,
+                    // product_brand_id: productBrandId,
+                  }),
+                  success: function (response) {
+                    console.log("random", response);
+                    // Clear the options in the "MAXSULOT" select box
+                    const $type = $('#type[name="type"]');
+                    console.log("shax", type);
+                    $type.empty();
+                    // $category.append(
+                    //   "<option selected disabled>Tanlang</option>"
+                    // );
+
+                    const $brand = $('#brand[name="brand"]');
+                    $brand.empty();
+                    // $brand.append("<option selected disabled>Tanlang</option>");
+                    const $products = $('#products[name="products"]');
+                    $products.empty();
+                    // Populate with new options from the response
+                    if (response) {
+                      response.types.forEach((type) => {
+                        // console.log("qr", type);
+                        $type.append(
+                          `<option value="${type.TYPE_ID}">${type.TYPE_NAME}</option>`
+                        );
+                      });
+                    } else {
+                      $type.append(
+                        '<option value="">No category found</option>'
+                      );
+                    }
+                    if (response) {
+                      response.brands.forEach((brand) => {
+                        $brand.append(
+                          `<option value="${brand.BRAND_ID}">${brand.BRAND_NAME}</option>`
+                        );
+                      });
+                    } else {
+                      $maxsulotSelect.append(
+                        '<option value="">No category found</option>'
+                      );
+                    }
+                    if (response) {
+                      response.products.forEach((product) => {
+                        $products.append(
+                          `<option value="${product.ID}"  data-name="${product.NAME} ${product.MODEL}" data-usd="${product.USD}">${product.NAME} ${product.MODEL}</option>`
+                        );
+                      });
+                    } else {
+                      $maxsulotSelect.append(
+                        '<option value="">No category found</option>'
+                      );
+                    }
+                  },
+                  error: function (error) {
+                    console.error("Error fetching products:", error);
+                  },
+                });
+              }
+            }
+          );
+        });
+      </script>
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
+    <script>
+      $.widget.bridge("uibutton", $.ui.button);
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js?v=3.2.0"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
+  </body>
+</html>

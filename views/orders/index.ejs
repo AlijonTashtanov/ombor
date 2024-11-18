@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Buyurtmalar</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
+    <!-- Ionicons -->
+    <link
+      rel="stylesheet"
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link
+      rel="stylesheet"
+      href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"
+    />
+    <!-- iCheck -->
+    <link
+      rel="stylesheet"
+      href="plugins/icheck-bootstrap/icheck-bootstrap.min.css"
+    />
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css?v=3.2.0" />
+    <!-- overlayScrollbars -->
+    <link
+      rel="stylesheet"
+      href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"
+    />
+    <!-- Daterange picker -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css" />
+    <!-- summernote -->
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css" />
+    <script data-cfasync="false" nonce="c768c475-1d6e-4ab7-9230-7ff56c84a290">
+      try {
+        (function (w, d) {
+          !(function (cJ, cK, cL, cM) {
+            if (cJ.zaraz) console.error("zaraz is loaded twice");
+            else {
+              cJ[cL] = cJ[cL] || {};
+              cJ[cL].executed = [];
+              cJ.zaraz = { deferred: [], listeners: [] };
+              cJ.zaraz._v = "5815";
+              cJ.zaraz._n = "c768c475-1d6e-4ab7-9230-7ff56c84a290";
+              cJ.zaraz.q = [];
+              cJ.zaraz._f = function (cN) {
+                return async function () {
+                  var cO = Array.prototype.slice.call(arguments);
+                  cJ.zaraz.q.push({ m: cN, a: cO });
+                };
+              };
+              for (const cP of ["track", "set", "debug"])
+                cJ.zaraz[cP] = cJ.zaraz._f(cP);
+              cJ.zaraz.init = () => {
+                var cQ = cK.getElementsByTagName(cM)[0],
+                  cR = cK.createElement(cM),
+                  cS = cK.getElementsByTagName("title")[0];
+                cS && (cJ[cL].t = cK.getElementsByTagName("title")[0].text);
+                cJ[cL].x = Math.random();
+                cJ[cL].w = cJ.screen.width;
+                cJ[cL].h = cJ.screen.height;
+                cJ[cL].j = cJ.innerHeight;
+                cJ[cL].e = cJ.innerWidth;
+                cJ[cL].l = cJ.location.href;
+                cJ[cL].r = cK.referrer;
+                cJ[cL].k = cJ.screen.colorDepth;
+                cJ[cL].n = cK.characterSet;
+                cJ[cL].o = new Date().getTimezoneOffset();
+                if (cJ.dataLayer)
+                  for (const cT of Object.entries(
+                    Object.entries(dataLayer).reduce(
+                      (cU, cV) => ({ ...cU[1], ...cV[1] }),
+                      {}
+                    )
+                  ))
+                    zaraz.set(cT[0], cT[1], { scope: "page" });
+                cJ[cL].q = [];
+                for (; cJ.zaraz.q.length; ) {
+                  const cW = cJ.zaraz.q.shift();
+                  cJ[cL].q.push(cW);
+                }
+                cR.defer = !0;
+                for (const cX of [localStorage, sessionStorage])
+                  Object.keys(cX || {})
+                    .filter((cZ) => cZ.startsWith("_zaraz_"))
+                    .forEach((cY) => {
+                      try {
+                        cJ[cL]["z_" + cY.slice(7)] = JSON.parse(cX.getItem(cY));
+                      } catch {
+                        cJ[cL]["z_" + cY.slice(7)] = cX.getItem(cY);
+                      }
+                    });
+                cR.referrerPolicy = "origin";
+                cR.src =
+                  "/cdn-cgi/zaraz/s.js?z=" +
+                  btoa(encodeURIComponent(JSON.stringify(cJ[cL])));
+                cQ.parentNode.insertBefore(cR, cQ);
+              };
+              ["complete", "interactive"].includes(cK.readyState)
+                ? zaraz.init()
+                : cJ.addEventListener("DOMContentLoaded", zaraz.init);
+            }
+          })(w, d, "zarazData", "script");
+          window.zaraz._p = async (bb) =>
+            new Promise((bc) => {
+              if (bb) {
+                bb.e &&
+                  bb.e.forEach((bd) => {
+                    try {
+                      const be = d.querySelector("script[nonce]"),
+                        bf = be?.nonce || be?.getAttribute("nonce"),
+                        bg = d.createElement("script");
+                      bf && (bg.nonce = bf);
+                      bg.innerHTML = bd;
+                      bg.onload = () => {
+                        d.head.removeChild(bg);
+                      };
+                      d.head.appendChild(bg);
+                    } catch (bh) {
+                      console.error(`Error executing script: ${bd}\n`, bh);
+                    }
+                  });
+                Promise.allSettled(
+                  (bb.f || []).map((bi) => fetch(bi[0], bi[1]))
+                );
+              }
+              bc();
+            });
+          zaraz._p({ e: ["(function(w,d){})(window,document)"] });
+        })(window, document);
+      } catch (e) {
+        throw (fetch("/cdn-cgi/zaraz/t"), e);
+      }
+    </script>
+    <style></style>
+  </head>
+  <body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+      <!-- Preloader -->
+
+      <!-- Navbar -->
+      <%- include('../partials/header.ejs') %>
+      <!-- /.navbar -->
+
+      <!-- Main Sidebar Container -->
+      <%- include('../partials/sidebar') %>
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <!-- /.col -->
+              <div class="col-sm-6"></div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+          <div class="container-fluid">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Buyurtmalar ro'yhati</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div
+                  id="example1_wrapper"
+                  class="dataTables_wrapper dt-bootstrap4"
+                >
+                  <div class="col-sm-12 col-md-12" style="padding: 10px">
+                    <div
+                      class="d-flex flex-wrap"
+                      style="gap: 15px; align-items: center"
+                    >
+                      <!-- Date From -->
+                      <div class="form-group" style="width: 150px">
+                        <label
+                          for="date-from"
+                          style="font-size: 14px; text-align: center"
+                          >Dan</label
+                        >
+                        <input
+                          class="form-control"
+                          type="date"
+                          id="date-from"
+                          name="date-from"
+                          style="padding: 5px; font-size: 14px; width: 100%"
+                        />
+                      </div>
+
+                      <!-- Date To -->
+                      <div class="form-group" style="width: 150px">
+                        <label
+                          for="date-to"
+                          style="font-size: 14px; text-align: center"
+                          >Gacha</label
+                        >
+                        <input
+                          class="form-control"
+                          type="date"
+                          id="date-to"
+                          name=""
+                          style="padding: 5px; font-size: 14px; width: 100%"
+                        />
+                      </div>
+
+                      <!-- Filial -->
+                      <div class="form-group" style="width: 250px">
+                        <label
+                          for="filial"
+                          style="font-size: 14px; text-align: center"
+                          >Filial</label
+                        >
+                        <select
+                          name="filial"
+                          id="filial"
+                          class="form-control form-control-sm"
+                          style="font-size: 14px; padding: 5px; width: 100%"
+                        >
+                          <option value="">Tanlang</option>
+                          <% filials.forEach(filial => { %>
+                          <option value="<%= filial.ID %>">
+                            <%= filial.NAME %>
+                          </option>
+                          <% }) %>
+                        </select>
+                      </div>
+
+                      <!-- Turi -->
+                      <div class="form-group" style="width: 250px">
+                        <label
+                          for="type"
+                          style="font-size: 14px; text-align: center"
+                          >Turi</label
+                        >
+                        <select
+                          name="type"
+                          id="type"
+                          class="form-control form-control-sm"
+                          style="font-size: 14px; padding: 5px; width: 100%"
+                        >
+                          <% types.forEach(type => { %>
+                          <option value="<%= type.ID %>">
+                            <%= type.NAME %>
+                          </option>
+                          <% }) %>
+                        </select>
+                      </div>
+
+                      <!-- Status -->
+                      <div class="form-group" style="width: 250px">
+                        <label
+                          for="status"
+                          style="font-size: 14px; text-align: center"
+                          >Status</label
+                        >
+                        <select
+                          name="status"
+                          id="status"
+                          class="form-control form-control-sm"
+                          style="font-size: 14px; padding: 5px; width: 100%"
+                        >
+                          <option value="">Tanlang</option>
+                          <% statuses.forEach(status => { %>
+                          <option value="<%= status.ID %>">
+                            <%= status.STATUS %>
+                          </option>
+                          <% }) %>
+                        </select>
+                      </div>
+
+                      <!-- Buttons -->
+                      <div
+                        class="form-group d-flex align-items-end"
+                        style="margin-bottom: 5px"
+                      >
+                        <a href="/orders" style="margin-right: 5px">
+                          <button
+                            type="button"
+                            class="btn btn-default btn-sm"
+                            style="
+                              padding: 5px 10px;
+                              font-size: 14px;
+                              width: 150px;
+                            "
+                          >
+                            <i
+                              class="fas fa-sync-alt"
+                              style="margin-right: 5px"
+                            ></i>
+                            Qayta yuklash
+                          </button>
+                        </a>
+
+                        <div>
+                          <a href="/download-orders" style="margin-left: 5px">
+                            <button
+                              type="button"
+                              class="btn btn-primary btn-sm"
+                              style="
+                                padding: 5px 10px;
+                                font-size: 14px;
+                                margin-left: 5px;
+                                width: 150px;
+                              "
+                            >
+                              <i class="fas fa-download"></i> Excel
+                            </button>
+                          </a>
+                        </div>
+                        <a href="/add-order">
+                          <button
+                            type="button"
+                            class="btn btn-primary btn-sm"
+                            style="
+                              padding: 5px 10px;
+                              font-size: 14px;
+                              width: 150px;
+                              margin-left: 15px;
+                            "
+                          >
+                            <i
+                              class="fas fa-plus"
+                              style="margin-right: 5px"
+                            ></i>
+                            Qo'shish
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <table
+                        id="example1"
+                        class="table table-bordered table-striped"
+                      >
+                        <thead>
+                          <tr>
+                            <th>#ID</th>
+                            <th>SANA</th>
+                            <th>MUDDAT</th>
+                            <th>FARQ</th>
+                            <th>FILIAL</th>
+                            <th>BUYURTMA TURI</th>
+                            <th>STATUS</th>
+
+                            <th>SONI</th>
+                            <th>YARATDI</th>
+                            <th>TAHRIRLASH</th>
+                          </tr>
+                        </thead>
+                        <tbody id="product-list"></tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="row" style="margin-left: 2px">
+                    <div style="display: flex; align-items: center">
+                      <button
+                        id="prev-page"
+                        style="
+                          padding: 8px 16px;
+                          margin-right: 10px;
+                          background-color: #007bff;
+                          color: white;
+                          border: none;
+                          border-radius: 4px;
+                          cursor: pointer;
+                        "
+                      >
+                        oldingi
+                      </button>
+                      <span
+                        id="pagination-info"
+                        style="font-size: 16px; margin-right: 10px; color: #333"
+                        >1-Sahifa
+                      </span>
+                      <button
+                        id="next-page"
+                        style="
+                          padding: 8px 16px;
+                          background-color: #007bff;
+                          color: white;
+                          border: none;
+                          border-radius: 4px;
+                          cursor: pointer;
+                        "
+                      >
+                        Keyingi
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- /.content-wrapper -->
+
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dateFrom = document.getElementById("date-from");
+        const dateTo = document.getElementById("date-to");
+        const filialSelect = document.getElementById("filial");
+        const typeSelect = document.getElementById("type");
+        const statusSelect = document.getElementById("status");
+
+        let currentPage = 1;
+        const limit = 100;
+
+        // Clear table if filters are not set
+        function clearTableIfFiltersAreNotSet() {
+          const filial = filialSelect.value;
+          const status = statusSelect.value;
+          const type = typeSelect.value;
+
+          if (filial === "0" && status === "0" && type === "0") {
+            document.getElementById("product-list").innerHTML = "";
+            return true; // Table is cleared
+          }
+          return false; // Filters are set
+        }
+
+        // Function to fetch and update the table with filtered data
+        async function fetchFilteredData() {
+          if (clearTableIfFiltersAreNotSet()) return;
+
+          const filial = filialSelect.value;
+          const type = typeSelect.value;
+          const status = statusSelect.value;
+          const fromDate = dateFrom.value;
+          const toDate = dateTo.value;
+
+          try {
+            const response = await fetch("/order-fetch", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                filial,
+                type,
+                status,
+                fromDate,
+                toDate,
+                page: currentPage,
+                limit,
+              }),
+            });
+
+            if (!response.ok) {
+              throw new Error("Failed to fetch data");
+            }
+
+            const data = await response.json();
+            console.log("olti", data);
+            const productTableBody = document.getElementById("product-list");
+            productTableBody.innerHTML =
+              data.data.length > 0
+                ? data.data
+                    .map((product) => {
+                      console.log("bekzad", product.MODEL);
+                      // Generate unique modal ID using product.ORDER_ID
+                      const uniqueModalId = `modal-lg-${product.ORDER_ID}`;
+
+                      return `
+                    <tr>
+                      <td>${product.ORDER_ID}</td>
+                      <td>${new Date(product.CREATED_AT)
+                        .toLocaleString("en-GB", {
+                          year: "numeric",
+                          month: "2-digit",
+                          day: "2-digit",
+                          hour: "2-digit",
+                          minute: "2-digit",
+                          hour12: false,
+                        })
+                        .replace(",", "")}</td>
+                  <td>
+  ${
+    product.MUDDAT == undefined
+      ? "NULL"
+      : new Date(product.MUDDAT)
+          .toLocaleString("en-GB", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+          })
+          .replace(",", "")
+  }
+</td>
+
+                      <td>${product.DIFFERENCE}</td>
+                      <td>${product.BRANCH_NAME}</td>
+                      <td>${product.ORDER_TYPE_NAME}</td>
+                      <td>${product.STATUS}</td>
+                      <td>${product.TOTAL_PRODUCT_QUANTITY}</td>
+                      <td>${product.USER_NAME}</td>
+ <td>
+  ${
+    product.STATUS == 1 || product.STATUS == 2 || product.STATUS == 6
+      ? `
+        <a href="/edit-order/${product.ORDER_ID}" class="btn btn-warning">
+          <i class="fas fa-pen"></i>
+        </a>
+      `
+      : ""
+  }
+  
+  ${
+    product.STATUS == 4
+      ? `
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#${uniqueModalId}"
+        >
+          <i class="fas fa-plus"></i>
+        </button>
+        
+        <div
+          class="modal fade"
+          id="${uniqueModalId}"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="${uniqueModalId}-label"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg" role="document">
+            <form action="/deadline-order/${product.ORDER_ID}" method="post">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="${uniqueModalId}-label">Muddat qo'shish</h4>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="card-body" style="padding: 20px 40px">
+                    <div class="tab-content" id="custom-tabs-three-tabContent">
+                      <div
+                        class="tab-pane fade show active"
+                        id="uzbek"
+                        role="tabpanel"
+                        aria-labelledby="uzbek-tab"
+                      >
+                        <div>
+                          <div class="form-group">
+                            <label for="name">Muddat</label>
+                            <input
+                              type="date"
+                              class="form-control"
+                              id="name"
+                              placeholder=""
+                              name="deadline"
+                              required
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                  <button
+                    type="button"
+                    class="btn btn-default"
+                    data-dismiss="modal"
+                  >
+                    Yopish
+                  </button>
+                  <button type="submit" class="btn btn-primary">Saqlash</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      `
+      : ""
+  }
+</td>
+
+
+                    </tr>
+                  `;
+                    })
+                    .join("")
+                : "<tr><td colspan='10'>No products found.</td></tr>";
+
+            // Update pagination controls
+            document.getElementById(
+              "pagination-info"
+            ).innerText = ` ${currentPage} -Sahifa`;
+            document.getElementById("prev-page").disabled = currentPage == 1;
+            document.getElementById("next-page").disabled =
+              data.data.length < limit;
+          } catch (error) {
+            console.error("Error fetching data:", error);
+          }
+        }
+
+        // Pagination navigation functions
+        function goToPreviousPage() {
+          if (currentPage > 1) {
+            currentPage--;
+            fetchFilteredData();
+          }
+        }
+
+        function goToNextPage() {
+          currentPage++;
+          fetchFilteredData();
+        }
+
+        // Event listeners for filters and pagination buttons
+        dateFrom.addEventListener("change", fetchFilteredData);
+        dateTo.addEventListener("change", fetchFilteredData);
+        filialSelect.addEventListener("change", fetchFilteredData);
+        typeSelect.addEventListener("change", fetchFilteredData);
+        statusSelect.addEventListener("change", fetchFilteredData);
+        document
+          .getElementById("prev-page")
+          .addEventListener("click", goToPreviousPage);
+        document
+          .getElementById("next-page")
+          .addEventListener("click", goToNextPage);
+      });
+    </script>
+    <!-- Modal -->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="modal-lg"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modal-lg-label"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <form action="/questions/save-department" method="post">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-lg-label">Bo'lim qo'shish</h4>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="card-body" style="padding: 20px 40px">
+                <div class="tab-content" id="custom-tabs-three-tabContent">
+                  <div
+                    class="tab-pane fade show active"
+                    id="uzbek"
+                    role="tabpanel"
+                    aria-labelledby="uzbek-tab"
+                  >
+                    <div>
+                      <div class="form-group">
+                        <label for="name">Nomi</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          placeholder=""
+                          name="name"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button
+                type="button"
+                class="btn btn-default"
+                data-dismiss="modal"
+              >
+                Yopish
+              </button>
+              <!-- Change this button to type="submit" -->
+              <button type="submit" class="btn btn-primary">Saqlash</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
+    <script>
+      $.widget.bridge("uibutton", $.ui.button);
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js?v=3.2.0"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
+  </body>
+</html>

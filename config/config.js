@@ -11,11 +11,11 @@ const dbConfig = {
   port: process.env.FIREBIRD_PORT || 3050,
   database:
     process.env.NODE_ENV === "production"
-      ? process.env.FIREBIRD_DB || "E:\\XBaseQ\\MyConfig.FDB" // Fallback if not set
-      : process.env.FIREBIRD_DB, // Development fallback
+      ? process.env.FIREBIRD_DB 
+      : process.env.FIREBIRD_DB, 
   host:
     process.env.NODE_ENV === "production"
-      ? process.env.FIREBIRD_HOST_PROD || "172.10.10.101" // Fallback if not set
+      ? process.env.FIREBIRD_HOST_PROD 
       : process.env.FIREBIRD_HOST_DEV || "172.10.10.124", // Development fallback
   user: process.env.FIREBIRD_USER || "SYSDBA", // Use the variable or default to SYSDBA
   password: process.env.FIREBIRD_PASSWORD || "masterkey", // Use the variable or default to masterkey
